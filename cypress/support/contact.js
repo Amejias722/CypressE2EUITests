@@ -1,3 +1,5 @@
+// This file contains the ContactInfo class that represents the contact information form on the checkout page.
+
 class ContactInfo {
     // Define selectors using getter methods
     get nameField() { return cy.get('[id="name"]'); }

@@ -2,7 +2,7 @@ import { contactInfo } from "../../support/contact";
 
 describe('E2E tests for e-commerce site', () => {
 
-    it('[qual-1234] passes', () => {
+    it('[PROJECT -TEST CASE NUMBER] passes', () => {
       cy.visit('https://www.demoblaze.com/')
       cy.get('a[href="prod.html?idp_=1"]').first().click()
       cy.get('a[href="#"]').contains('Add to cart').click();
