@@ -1,5 +1,6 @@
 import { contactInfo } from "../../support/contact";
 
+
 describe('E2E tests for e-commerce site', () => {
 
     it('User can login', () => {
