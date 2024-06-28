@@ -3,8 +3,12 @@ import { contactInfo } from "../../support/contact";
 
 describe('E2E tests for e-commerce site', () => {
 
+  beforeEach(() => {
+    cy.visit('https://www.demoblaze.com/')
+  });
+  
+  
     it('User can login', () => {
-      cy.visit('https://www.demoblaze.com/')
       cy.get('[id="login2"]').click()
       cy.get('[id="logInModalLabel"]').should('be.visible')
       cy.get('[id="loginusername"').type('QA Tester')
@@ -13,15 +17,15 @@ describe('E2E tests for e-commerce site', () => {
       cy.intercept('POST', '/login', (req) => {
         req.reply((res) => {
           expect(res.statusCode).to.eq(200);
-        });
+       });
       });
       
       
     });
 
     it('User can checkout item', () => {
-      cy.visit('https://www.demoblaze.com/')
-      cy.get('a[href="prod.html?idp_=1"]').first().click()
+     
+      cy.get('[src="imgs/galaxy_s6.jpg"]').first().click()
       cy.get('a[href="#"]').contains('Add to cart').click();
       cy.get('a[href="cart.html"]').contains('Cart').click();
       cy.get('button').contains('Place Order').click();
@@ -38,9 +42,3 @@ describe('E2E tests for e-commerce site', () => {
      
     
   })
-
-
-
-
-
-
