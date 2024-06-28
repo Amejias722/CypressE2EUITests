@@ -1,11 +1,11 @@
 import { contactInfo } from "../../support/contact";
-import { ids } from "../../support/ids"
+
 
 describe('E2E tests for e-commerce site', () => {
 
     it('User can login', () => {
       cy.visit('https://www.demoblaze.com/')
-      cy.get(ids).click()
+      cy.get('[id="login2"]').click()
       cy.get('[id="logInModalLabel"]').should('be.visible')
       cy.get('[id="loginusername"').type('QA Tester')
       cy.get('[id="loginpassword"]').type('Lexi QA 1234')
@@ -27,7 +27,7 @@ describe('E2E tests for e-commerce site', () => {
       cy.get('button').contains('Place Order').click();
       contactInfo.submitContactInfo({
         name: 'Lexi Test',
-        country: 'Murica',
+        country: 'USA',
         city: 'RVA',
         creditCard: '4111111111111111',
         month: '01',
