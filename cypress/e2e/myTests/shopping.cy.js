@@ -1,11 +1,11 @@
 import { contactInfo } from "../../support/contact";
-
+import { ids } from "../../support/ids"
 
 describe('E2E tests for e-commerce site', () => {
 
     it('User can login', () => {
       cy.visit('https://www.demoblaze.com/')
-      cy.get('[id="login2"]').click()
+      cy.get(ids).click()
       cy.get('[id="logInModalLabel"]').should('be.visible')
       cy.get('[id="loginusername"').type('QA Tester')
       cy.get('[id="loginpassword"]').type('Lexi QA 1234')
