@@ -7,10 +7,10 @@ describe("User Searches for Powerlifter", () => {
     } );
     it("User searches athlete using searchbar", () => {
         
-        cy.get('#searchfield').type("Alexis Mejias {enter}")
-        cy.contains("Alexis Mejias").click()
+        cy.get('#searchfield').type("Tamara Walcott {enter}")
+        cy.contains("Tamara Walcott").click()
         cy.contains("Personal Bests").should("be.visible");
-        cy.contains("Alexis Mejias").should("be.visible");
+        cy.contains("Tamara Walcott").should("be.visible");
        
     }
     );
