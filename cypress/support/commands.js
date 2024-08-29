@@ -22,4 +22,6 @@
 //
 //
 // -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+// Define a custom command called 'performProductFlow'
+

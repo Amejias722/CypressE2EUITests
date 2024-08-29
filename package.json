@@ -9,7 +9,9 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cypress": "^13.11.0"
+    "cypress": "^13.11.0",
+    "cypress-plugin-steps": "^1.1.1",
+    "cypress-recurse": "^1.35.3"
   },
   "devDependencies": {
     "faker": "^6.6.6",
