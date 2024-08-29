@@ -1,5 +1,9 @@
 import { describe } from "mocha";
 
+/*Wisp is a healthcare company that focuses on providing convenient and accessible telehealth services. 
+They specialize in offering virtual consultations, medical advice, and prescription medications for a range of common health issues. 
+By leveraging technology, Wisp aims to make healthcare more straightforward and efficient, allowing patients to receive care from the comfort of their homes.*/
+
 
 const ids = {
     acceptCookies: '[id="onetrust-accept-btn-handler"]',
