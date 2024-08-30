@@ -23,10 +23,8 @@ describe('URL Check', () => {
           endpoints.forEach(endpoint => {
             cy.request({
               url: `${base}${endpoint.url}`,
-              failOnStatusCode: false 
             }).then(response => {
               expect(response.status).to.eq(endpoint.expectedStatusCode);
-              //expect(response.headers['content-type']).to.include('text/html');
               expect(response.body).to.contain(endpoint.expectedText);
 
             });
