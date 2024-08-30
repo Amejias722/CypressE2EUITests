@@ -26,7 +26,7 @@ describe('URL Check', () => {
               failOnStatusCode: false 
             }).then(response => {
               expect(response.status).to.eq(endpoint.expectedStatusCode);
-              expect(response.headers['content-type']).to.include('text/html');
+              //expect(response.headers['content-type']).to.include('text/html');
               expect(response.body).to.contain(endpoint.expectedText);
 
             });

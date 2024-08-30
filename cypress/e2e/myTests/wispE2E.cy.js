@@ -28,6 +28,7 @@ describe("Wisp E2E Checkout", () => {
 it('User can add item to cart and checkout', () => {
     cy.get(ids.acceptCookies, { timeout: 10000 }).should('be.visible').click();
     cy.intercept('@ignorePopUp')// this blocks the pop-up 
+
     cy.step('User selects Shop Treatments Button')
     cy.get('[class="button-secondary font-medium"]').contains('Shop Treatments').click()
     cy.url().should('include', 'https://hellowisp.com/shop-home')
