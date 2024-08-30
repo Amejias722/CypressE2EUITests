@@ -13,18 +13,21 @@ const ids = {
     nextButton: '[data-cy="navigation-buttons-next"]',
     noThanksoption: '[data-cy="product-flow-option-button-unknown"]',
     checkoutButton: '[data-cy="cart-checkout-click"]',
+    removeItem: '[data-cy="remove-cart-item-button"]'
     }
 
 describe("Wisp E2E Checkout", () => {
     beforeEach(() => {
-        cy.visit("https://hellowisp.com")  
+        cy.visit("https://hellowisp.com")
+        cy.wait(3000)
+        cy.intercept('GET', 'https://my.jst.ai/ifm_4.1.html*', {
+            statusCode: 204, // No Content response
+            body: '', // Empty body
+          }).as('ignorePopUp');
     });
 it('User can add item to cart and checkout', () => {
-
-    cy.get(ids.acceptCookies, { timeout: 10000 })
-    .should('be.visible')
-    .click();
-
+    cy.get(ids.acceptCookies, { timeout: 10000 }).should('be.visible').click();
+    cy.intercept('@ignorePopUp')// this blocks the pop-up 
     cy.step('User selects Shop Treatments Button')
     cy.get('[class="button-secondary font-medium"]').contains('Shop Treatments').click()
     cy.url().should('include', 'https://hellowisp.com/shop-home')
@@ -51,6 +54,10 @@ it('User can add item to cart and checkout', () => {
   cy.get('button').contains('Add to Cart').should('be.visible').click();
   cy.url().should('include', "https://hellowisp.com/cart");
   cy.get(ids.checkoutButton).should('be.visible');
+
+  cy.step('User removes item')
+  cy.get(ids.removeItem).click()
+  cy.contains('Your cart is currently empty!').should('be.visible')
 
 });
 
