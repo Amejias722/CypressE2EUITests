@@ -6,7 +6,7 @@ describe('URL Check', () => {
         .should('equal', 200);
     });
 
-    describe('API Test - verify footer links', () => {
+    describe('API Test - verify footer links using web page endpoints', () => {
         it('should return the correct response for each endpoint', () => {
           const base = 'https://hellowisp.com/shop';
           const endpoints = [
