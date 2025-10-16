@@ -6,7 +6,6 @@ This project contains a collection of End-to-End (E2E) UI tests sourced from var
 - Current Status: The project is continuously updated with new tests and sites.
 
 ## Setup Instructions
-- Project requries cypress to run
 - Clone this Repository
 - Install Dependencies: yarn install
 
